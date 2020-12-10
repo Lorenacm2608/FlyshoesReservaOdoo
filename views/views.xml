@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="flyshoesreserva.list">
+      <field name="name">flyshoesreserva list</field>
+      <field name="model">flyshoesreserva.flyshoesreserva</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
+      <field name="name">flyshoesreserva window</field>
+      <field name="res_model">flyshoesreserva.flyshoesreserva</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="flyshoesreserva.action_server">
+      <field name="name">flyshoesreserva server</field>
+      <field name="model_id" ref="model_flyshoesreserva_flyshoesreserva"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="flyshoesreserva" id="flyshoesreserva.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="flyshoesreserva.menu_1" parent="flyshoesreserva.menu_root"/>
+    <menuitem name="Menu 2" id="flyshoesreserva.menu_2" parent="flyshoesreserva.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="flyshoesreserva.menu_1_list" parent="flyshoesreserva.menu_1"
+              action="flyshoesreserva.action_window"/>
+    <menuitem name="Server to list" id="flyshoesreserva" parent="flyshoesreserva.menu_2"
+              action="flyshoesreserva.action_server"/>
+    -->
+  </data>
+</odoo>
