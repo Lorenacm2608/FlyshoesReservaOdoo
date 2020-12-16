@@ -1,4 +1,4 @@
-from odoo import models
+from odoo import models, fields
 
 class Producto(models.Model):
     _name = 'flyshoesreserva.producto'
@@ -9,9 +9,9 @@ class Producto(models.Model):
                             ('ropa', 'ROPA'),
                             ('zapatillas', 'ZAPATILLAS')
                             ])
-    precio = fields.Float (required=True)
+    precio = fields.Float(required=True)
     imagen = fields.Binary(String="Imagen del producto")
-    stock = fields.Integer (String="Cantidad en el almacén")
+    stock = fields.Integer(String="Cantidad en el almacen")
     talla = fields.Selection([
                              ('talla36', '36'),
                              ('talla37', '37'),
@@ -31,7 +31,9 @@ class Producto(models.Model):
                              ('xl', 'XL')
                              ])
     #relacion de producto->reserva                         
-    reservas = fields.One2many ('flyshoesreserva.reserva', 'producto', string="Reservas", required=True)
+    reservas = fields.One2many('flyshoesreserva.reserva', 'producto', string="Reservas", required=True)
   
     #relacion de producto->proveedor
-    proveedor = fields.Many2one ('flyshoesreserva.proveedor', String="Proveedor", required=True)
+    proveedor = fields.Many2one('flyshoesreserva.proveedor', String="Proveedor", required=True)
+    
+    

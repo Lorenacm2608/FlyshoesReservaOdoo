@@ -34,7 +34,7 @@ class Usuario(models.Model):
                                ondelete='cascade', string="Cliente", required=True)
     
     #relacion de administrador->proveedor
-    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'administrador', string="Proveedores")
+    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'p_administrador', string="Proveedores")
     
     #relacion de vendedor->producto
     productos_vendedor = fields.Many2many('flyshoesreserva.producto', String="Productos")

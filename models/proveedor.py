@@ -20,7 +20,7 @@ class Proveedor(models.Model):
     descripcion = fields.Char()
     
     #Relacion de proveedor->usuario(Administrador)
-    administrador = fields.Many2one ('res.users', string="Administrador", required=True)
+    p_administrador = fields.Many2one('res.users', string="Administrador", required=True)
     
     #Relacion de proveedor-> producto
-    producto = fields.One2many ('flyshoesreserva.producto', 'proveedor', string="Productos", required=True)
+    producto = fields.One2many('flyshoesreserva.producto', 'proveedor', string="Productos", required=True)
