@@ -9,10 +9,10 @@ from odoo import models
 class Proveedor(models.Model):
     _name = 'flyshoesreserva.proveedor'
     
-    tipo = fields.Selection[(
+    tipo = fields.Selection(selection=[
                              ('zapatillas', 'ZAPATILLAS'),
                              ('ropa', 'ROPA')
-                             )]
+                             ])
     empresa = fields.Char(required=True)
     email = fields.Char(required=True)
     mombre = fields.Char(required=True)
