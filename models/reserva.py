@@ -13,7 +13,7 @@ class Reserva(models.Model):
     cantidad = fields.Integer(required=True, string="Cantidad del producto")
     
     #faltan muchos campos
-    estado_reserva = fields.Selection([('cancelada', 'CANCELADA'),
+    estado_reserva = fields.Selection(selection=[('cancelada', 'CANCELADA'),
                                       ('confirmada', 'CONFIRMADA'),
                                       ('finalizada', 'FINALIZADA')],
                                       string="Estado de la reserva",

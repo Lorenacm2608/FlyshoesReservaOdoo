@@ -9,13 +9,13 @@ class Usuario(models.Model):
     _name = 'res.users'
     _inherit = 'res.users'
     
-    tipo_usuario = fields.Selection([('cliente', 'CLIENTE'),
+    tipo_usuario = fields.Selection(selection=[('cliente', 'CLIENTE'),
                                     ('vendedor', 'VENDEDOR'),
                                     ('administrador', 'ADMINISTRADOR')],
                                     string="Tipo de usuario",
                                     help="Por favor seleciona el tipo de usuario.",
                                     default='cliente')
-    estado_usuario = fields.Selection([('enabled', 'ENABLED'),
+    estado_usuario = fields.Selection(selection=[('enabled', 'ENABLED'),
                                       ('disabled', 'DISABLED')],
                                       string="Tipo de usuario",
                                       help="Por favor seleciona ENABLED/DISABLED.",
