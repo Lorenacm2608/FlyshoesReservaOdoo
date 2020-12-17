@@ -5,14 +5,14 @@ class Producto(models.Model):
     
     modelo = fields.Char(String="Producto")
     descripcion = fields.Char
-    tipo = fields.Selection([
+    tipo = fields.Selection(selection=[
                             ('ropa', 'ROPA'),
                             ('zapatillas', 'ZAPATILLAS')
                             ])
     precio = fields.Float(required=True)
     imagen = fields.Binary(String="Imagen del producto")
     stock = fields.Integer(String="Cantidad en el almacen")
-    talla = fields.Selection([
+    talla = fields.Selection(selection=[
                              ('talla36', '36'),
                              ('talla37', '37'),
                              ('talla38', '38'),
