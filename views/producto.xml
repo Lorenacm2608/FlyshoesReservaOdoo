@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="producto_form_view">
+         <!-- descripcion de la vista cuando se busca en una lista-->
+         <field name="name">producto.form</field>
+         <!--modelo al que hace referencia-->
+         <field name="model">flyshoesreserva.producto</field>
+         <!--descripcion del diseño de la vista (arquitectura) -->
+         <field name="arch" type="xml"/>
+         </record>
+    </data>
+</odoo>
+    
