@@ -7,8 +7,37 @@
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
          <!--descripcion del diseño de la vista (arquitectura) -->
-         <field name="arch" type="xml"/>
+         <field name="arch" type="xml">
+                <tree>
+                    <field name="modelo"/>
+                    <field name="descripcion"/>
+                    <field name="tipo"/>
+                    <field name="precio"/>
+                    <field name="imagen"/>
+                    <field name="stock"/>
+                    <field name="talla"/>
+                </tree>
+            </field>
          </record>
+         
+         <!-- actions opening views on models -->
+    
+         <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
+                <field name="name">Ventana de productos</field>
+                <field name="res_model">flyshoesreserva.producto</field>
+                <field name="view_mode">tree,form</field>
+         </record>
+         
+ 
+    
+        <!-- menu categories -->
+    
+        <menuitem name="Productos" id="flyshoesreserva.productos" parent="flyshoesreserva.menu_root"/>
+    
+        <!-- actions -->
+    
+        <menuitem name="Mis Productos" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.productos"
+                action="flyshoesreserva.action_window"/> 
     </data>
 </odoo>
     
