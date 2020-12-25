@@ -29,12 +29,10 @@
             <field name="arch" type="xml">
                 <form>
                     <sheets>
-                        <group colspan="7">
                             <group colspan="4">
                                 <separator string="Usuario" colspan="4"/>
                                 <field name="tipo_usuario"/>
                                 <field name="estado_usuario"/>
-                            </group>
                         </group>
                     </sheets>
                 </form>     
