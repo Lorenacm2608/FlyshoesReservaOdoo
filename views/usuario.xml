@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- VISTA DE ÁRBOL-->
+        <record model="ir.ui.view" id="usuario_tree_view">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">usuario.tree</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml"> 
+                <tree>
+                    <field name="tipo_usuario"/>
+                    <field name="estado_usuario"/>
+                </tree>  
+            </field>
+        </record>
+        
+        
+        <!-- VISTA DE FORMULARIO--> 
+        <record model="ir.ui.view" id="usuario_form_view">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">usuario.form</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheets>
+                        <group colspan="7">
+                            <group colspan="4">
+                                <separator string="Usuario" colspan="4"/>
+                                <field name="tipo_usuario"/>
+                                <field name="estado_usuario"/>
+                            </group>
+                        </group>
+                    </sheets>
+                </form>     
+            </field>
+        </record> 
+         
+         
+        <!-- VISTA DE BÚSQUEDA-->
+        <record model="ir.ui.view" id="usuario_search_view">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">usuario.search</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">res.users</field>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml"> 
+                <search>
+                    <field name="tipo_usuario"/>
+                    <field name="estado_usuario"/>
+                </search>
+            </field>
+        </record>
+         
+         
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
+            <field name="name">Ventana de usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+         
+        <!-- Top menu item -->
+    
+        <menuitem name="Flyshoes Reserva" id="flyshoesreserva.menu_root"/>
+    
+        <!-- menu categories -->
+    
+        <menuitem name="Usuarios" id="flyshoesreserva.usuarios" parent="flyshoesreserva.menu_root"/>
+    
+        <!-- actions -->
+    
+        <menuitem name="Mis Usuarios" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.usuarios"
+                  action="flyshoesreserva.action_window"/> 
+    </data>
+</odoo>
