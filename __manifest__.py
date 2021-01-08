@@ -26,8 +26,9 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/reservas.xml',
+        #'views/reservas.xml',
         'views/templates.xml',
+        'views/proveedor.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
