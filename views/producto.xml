@@ -6,6 +6,7 @@
          <field name="name">producto.tree</field>
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
+         <field name="inherit_id" ref="base.view_producto_tree"/>
          <!--descripcion del diseño de la vista (arquitectura) -->
          <field name="arch" type="xml"> 
                 <tree>
@@ -25,25 +26,21 @@
          <field name="name">producto.form</field>
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
+         <field name="inherit_id" ref="base.view_producto_form"/>
          <!--descripcion del diseño de la vista (arquitectura) -->
          <field name="arch" type="xml">
                 <form string="formulario">
                      <sheets>
-                        <group colspan="7">
-                           <group colspan="4">
-                               <separator string="Datos del producto" colspan="4"/>
+                           <group colspan="7">
+                               <separator string="Datos del producto" colspan="7"/>
                                <field name="modelo"/>
                                <field name="descripcion"/>
                                <field name="tipo"/>
                                <field name="precio"/>
-                           </group>
-                           <group colspan="3">
-                               <separator string="Disponibilidad" colspan="3"/>
                                <field name="imagen"/>
                                <field name="stock"/>
                                <field name="talla"/>
                            </group>
-                        </group>
                      </sheets>
                 </form>     
             </field>
@@ -60,8 +57,6 @@
                     <field name="modelo"/>
                     <field name="tipo"/>
                     <field name="precio"/>
-                    <field name="stock"/>
-                    <field name="talla"/>
                 </search>
             </field>
          </record>
