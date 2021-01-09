@@ -6,7 +6,6 @@
          <field name="name">producto.tree</field>
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
-         <field name="inherit_id" ref="base.view_producto_tree"/>
          <!--descripcion del diseño de la vista (arquitectura) -->
          <field name="arch" type="xml"> 
                 <tree>
@@ -26,7 +25,6 @@
          <field name="name">producto.form</field>
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
-         <field name="inherit_id" ref="base.view_producto_form"/>
          <!--descripcion del diseño de la vista (arquitectura) -->
          <field name="arch" type="xml">
                 <form string="formulario">
