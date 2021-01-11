@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- VISTA DE ÁRBOL-->
+        <!-- VISTA DE ÁRBOLFFFF-->
         <record model="ir.ui.view" id="usuario_tree_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
             <field name="name">usuario.tree</field>
@@ -22,6 +22,7 @@
         <record model="ir.ui.view" id="usuario_form_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
             <field name="name">usuario.form</field>
+            <field name="priority" eval="1"></field>
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
@@ -29,13 +30,18 @@
             <field name="arch" type="xml">
                 <form>
                     <sheets>
-                        <group colspan="7">
-                            <separator colspan="7"/>
+                        <group colspan="2">
+                            <separator colspan="2"/>
                             <field name="name"/>
                             <field name="email"/>
+                            <field name="mobile"/>
                             <field name="login"/>
                             <field name="company_name"/>
-                            <field name="lang"/>
+                            <field name="company_type"/>
+                        </group>
+                        <group colspan="4">
+                            <field name="tipo_usuario"/>
+                            <field name="estado_usuario"/>
                         </group>
                     </sheets>
                 </form>     
