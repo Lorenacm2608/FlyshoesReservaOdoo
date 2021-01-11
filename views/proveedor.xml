@@ -1,58 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-         <record model="ir.ui.view" id="proveedor_tree_view">
+         <record model="ir.ui.view" id="flyshoesreserva.list_proveedores">
             <!-- descripcion de la vista cuando se busca en una lista-->
             <field name="name">proveedor.tree</field>
             <!--modelo al que hace referencia-->
-            <field name="model">res.users</field>
-            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="model">flyshoesreserva.proveedor</field>
             <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml"> 
                 <tree>
-                    <field name="tipo_usuario"/>
-                    <field name="estado_usuario"/>
+                    <field name="tipo"/>
+                    <field name="empresa"/>
+                    <field name="email"/>
+                    <field name="mombre"/>
+                    <field name="telefono"/>
+                    <field name="descripcion"/>
                 </tree>  
             </field>
         </record>
-        
-        <record model="ir.ui.view" id="proveedor_form_view">
-            <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">proveedor.form</field>
-            <!--modelo al que hace referencia-->
-            <field name="model">res.users</field>
-            <field name="inherit_id" ref="base.view_users_form"/>
-            <!--descripcion del diseño de la vista (arquitectura) -->
-            <field name="arch" type="xml">
-                <form>
-                    <sheets>
-                            <group colspan="4">
-                                <separator string="Usuario" colspan="4"/>
-                                <field name="tipo_usuario"/>
-                                <field name="estado_usuario"/>
-                        </group>
-                    </sheets>
-                </form>     
-            </field>
-        </record> 
-        
-        <record model="ir.ui.view" id="proveedor_search_view">
-            <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">proveedor.search</field>
-            <!--modelo al que hace referencia-->
-            <field name="model">res.users</field>
-            <!--descripcion del diseño de la vista (arquitectura) -->
-            <field name="arch" type="xml"> 
-                <search>
-                    <field name="tipo_usuario"/>
-                    <field name="estado_usuario"/>
-                </search>
-            </field>
-        </record>
+
         
         <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
             <field name="name">Ventana de proveedores</field>
-            <field name="res_model">res.users</field>
+            <field name="res_model">flyshoesreserva.proveedor</field>
             <field name="view_mode">tree,form</field>
         </record>
         
@@ -60,11 +30,11 @@
     
         <!-- menu categories -->
     
-        <menuitem name="Proveedores" id="flyshoesreserva.usuarios" parent="flyshoesreserva.menu_root"/>
+        <menuitem name="Proveedores" id="flyshoesreserva.proveedor" parent="flyshoesreserva.menu_root"/>
     
         <!-- actions -->
     
-        <menuitem name="Mis Proveedores" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.usuarios"
+        <menuitem name="Mis Proveedores" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.proveedor"
                   action="flyshoesreserva.action_window"/>
     </data>
 </odoo>
