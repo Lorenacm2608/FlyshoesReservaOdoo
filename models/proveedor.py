@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-#Lorena
+#Moroni
 
 from odoo import fields
 from odoo import models
@@ -15,7 +15,7 @@ class Proveedor(models.Model):
                              ])
     empresa = fields.Char(required=True)
     email = fields.Char(required=True)
-    mombre = fields.Char(required=True)
+    nombre = fields.Char(required=True)
     telefono = fields.Char(required=True)
     descripcion = fields.Char()
     

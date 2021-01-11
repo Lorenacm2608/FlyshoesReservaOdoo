@@ -12,7 +12,7 @@
                     <field name="tipo"/>
                     <field name="empresa"/>
                     <field name="email"/>
-                    <field name="mombre"/>
+                    <field name="nombre"/>
                     <field name="telefono"/>
                     <field name="descripcion"/>
                 </tree>  
