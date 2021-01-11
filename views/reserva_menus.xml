@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- USER actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_window_usuarios">
+            <field name="name">Ventana de usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        
+        <record model="ir.actions.act_window" id="action_window_usuarios_tree"> 
+            <field name="name">Usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_window_usuarios_form"> 
+            <field name="name">Introducir usuario</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">form</field>
+        </record>
+         
+        <!-- Top menu item -->
+        <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
+        <!-- menu categories--> 
+        <menuitem id="usuario_menu" name="Usuarios" parent="flyshoesreserva.menu_root"/>
+    
+        <menuitem id="usuario_menu_form" name="Introducir usuario" parent="usuario_menu" action="action_window_usuarios_form"/>
+    
+        <menuitem id="usuario_menu_tree" name="Lista de usuarios" parent="usuario_menu" action="action_window_usuarios_tree"/>
+    </data>
+</odoo>

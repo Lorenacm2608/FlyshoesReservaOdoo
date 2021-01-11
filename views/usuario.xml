@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- VISTA DE ÁRBOLFFFF-->
+        <!-- VISTA DE ÁRBOL-->
         <record model="ir.ui.view" id="usuario_tree_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
             <field name="name">usuario.tree</field>
@@ -11,8 +11,8 @@
             <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml"> 
                 <tree>
-                    <field name="tipo_usuario"/>
-                    <field name="estado_usuario"/>
+                    <field name="tipo_usuario" string="Tipo de usuario"/>
+                    <field name="estado_usuario" string="Estado del usuario"/>
                 </tree>  
             </field>
         </record>
@@ -21,11 +21,10 @@
         <!-- VISTA DE FORMULARIO--> 
         <record model="ir.ui.view" id="usuario_form_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">usuario.form</field>
-            <field name="priority" eval="1"></field>
+            <field name="name">usuario.form</field> 
+            <field name="priority" eval="1" /> 
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
-            <field name="inherit_id" ref="base.view_users_form"/>
             <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml">
                 <form>
@@ -40,7 +39,7 @@
                             <field name="company_type"/>
                         </group>
                         <group colspan="4">
-                            <field name="tipo_usuario"/>
+                            <field name="tipo_usuario" string="Hola"/>
                             <field name="estado_usuario"/>
                         </group>
                     </sheets>
@@ -64,34 +63,5 @@
             </field>
         </record>
          
-         
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="action_window_usuarios">
-            <field name="name">Ventana de usuarios</field>
-            <field name="res_model">res.users</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-        
-        
-        <record model="ir.actions.act_window" id="action_window_usuarios_tree"> 
-            <field name="name">Usuarios</field>
-            <field name="res_model">res.users</field>
-            <field name="view_mode">tree</field>
-        </record>
-        
-        <record model="ir.actions.act_window" id="action_window_usuarios_form"> 
-            <field name="name">Introducir usuario</field>
-            <field name="res_model">res.users</field>
-            <field name="view_mode">form</field>
-        </record>
-         
-        <!-- Top menu item -->
-        <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
-        <!-- menu categories--> 
-        <menuitem id="usuario_menu" name="Usuarios" parent="flyshoesreserva.menu_root"/>
-    
-        <menuitem id="usuario_menu_form" name="Introducir usuario" parent="usuario_menu" action="action_window_usuarios_form"/>
-    
-        <menuitem id="usuario_menu_tree" name="Lista de usuarios" parent="usuario_menu" action="action_window_usuarios_tree"/>
     </data>
 </odoo>

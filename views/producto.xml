@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+         <record model="ir.ui.view" id="producto_tree_view">
+         <!-- descripcion de la vista cuando se busca en una lista-->
+         <field name="name">producto.tree</field>
+         <!--modelo al que hace referencia-->
+         <field name="model">flyshoesreserva.producto</field>
+         <!--descripcion del diseño de la vista (arquitectura) -->
+         <field name="arch" type="xml"> 
+                <tree>
+                    <field name="modelo"/>
+                    <field name="descripcion"/>
+                    <field name="tipo"/>
+                    <field name="precio"/>
+                    <field name="imagen"/>
+                    <field name="stock"/>
+                    <field name="talla"/>
+                </tree>  
+            </field>
+         </record>
+         
          <record model="ir.ui.view" id="producto_form_view">
          <!-- descripcion de la vista cuando se busca en una lista-->
          <field name="name">producto.form</field>
          <!--modelo al que hace referencia-->
          <field name="model">flyshoesreserva.producto</field>
          <!--descripcion del diseño de la vista (arquitectura) -->
-         <field name="arch" type="xml"/>
+         <field name="arch" type="xml">
+                <form string="formulario">
+                     <sheets>
+                        <group colspan="7">
+                           <group colspan="4">
+                               <separator string="Datos del producto" colspan="4"/>
+                               <field name="modelo"/>
+                               <field name="descripcion"/>
+                               <field name="tipo"/>
+                               <field name="precio"/>
+                           </group>
+                           <group colspan="3">
+                               <separator string="Disponibilidad" colspan="3"/>
+                               <field name="imagen"/>
+                               <field name="stock"/>
+                               <field name="talla"/>
+                           </group>
+                        </group>
+                     </sheets>
+                </form>     
+            </field>
          </record>
+         
+         <record model="ir.ui.view" id="producto_search_view">
+         <!-- descripcion de la vista cuando se busca en una lista-->
+         <field name="name">producto.search</field>
+         <!--modelo al que hace referencia-->
+         <field name="model">flyshoesreserva.producto</field>
+         <!--descripcion del diseño de la vista (arquitectura) -->
+         <field name="arch" type="xml"> 
+                 <search>
+                    <field name="modelo"/>
+                    <field name="tipo"/>
+                    <field name="precio"/>
+                    <field name="stock"/>
+                    <field name="talla"/>
+                </search>
+            </field>
+         </record>
+         
+         <!-- actions opening views on models -->
+    
+         <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
+                <field name="name">Ventana de productos</field>
+                <field name="res_model">flyshoesreserva.producto</field>
+                <field name="view_mode">tree,form</field>
+         </record>
+         
+        <!-- Top menu item -->
+    
+        <menuitem name="Flyshoes Reserva" id="flyshoesreserva.menu_root"/>
+    
+        <!-- menu categories -->
+    
+        <menuitem name="Productos" id="flyshoesreserva.productos" parent="flyshoesreserva.menu_root"/>
+    
+        <!-- actions -->
+    
+        <menuitem name="Mis Productos" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.productos"
+                action="flyshoesreserva.action_window"/> 
     </data>
 </odoo>
-    
