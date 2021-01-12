@@ -4,7 +4,7 @@ class Producto(models.Model):
     _name = 'flyshoesreserva.producto'
     
     modelo = fields.Char(String="Producto")
-    descripcion = fields.Char
+    descripcion = fields.Text()
     tipo = fields.Selection(selection=[
                             ('ropa', 'ROPA'),
                             ('zapatillas', 'ZAPATILLAS')
@@ -35,5 +35,4 @@ class Producto(models.Model):
   
     #relacion de producto->proveedor
     proveedor = fields.Many2one('flyshoesreserva.proveedor', String="Proveedor", required=True)
-    
     

@@ -26,10 +26,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         #'views/views.xml',
-        #'views/reservas.xml',
-        #'views/producto.xml',
+        'views/proveedor.xml',
+        'views/reservas.xml',
+        'views/producto.xml',
         'views/usuario.xml',
-        'views/reserva_menus.xml',
+        #'views/reserva_menus.xml',
         #'views/templates.xml',
         
     ],

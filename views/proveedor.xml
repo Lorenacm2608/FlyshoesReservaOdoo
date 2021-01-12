@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- VISTA DE ÁRBOL-->
+        <record model="ir.ui.view" id="flyshoesreserva.list_proveedores">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">proveedor.tree</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">flyshoesreserva.proveedor</field>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml"> 
+                <tree>
+                    <field name="tipo"/>
+                    <field name="empresa"/>
+                    <field name="email"/>
+                    <field name="nombre"/>
+                    <field name="telefono"/>
+                    <field name="descripcion"/>
+                </tree>  
+            </field>
+        </record> 
+        
+        <!-- VISTA DE FORMULARIO-->
+        <record model="ir.ui.view" id="proveedor_form_view">
+            <field name="name">Crear proveedor</field>
+            <field name="model">flyshoesreserva.proveedor</field>
+            <field name="arch" type="xml"> 
+                <form>
+                    <sheet>
+                        <group string="Datos proveedor">
+                            <separator colspan="2"/>
+                            <field name="nombre"/>
+                            <field name="descripcion"/>
+                        </group>
+                        <group string="Contacto">
+                            <separator colspan="2"/>
+                            <field name="email"/>
+                            <field name="telefono"/>
+                        </group>
+                        <group string="Empresa"> 
+                            <separator colspan="2"/>
+                            <field name="empresa"/>
+                            <field name="tipo"/>
+                        </group>      
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- VISTA DE BÚSQUEDA-->
+        <record model="ir.ui.view" id="flyshoesreserva.list_proveedores">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">Búsqueda de proveedor</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">flyshoesreserva.proveedor</field>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml"> 
+                <search>
+                    <field name="tipo"/>
+                    <field name="empresa"/>
+                    <field name="email"/>
+                    <field name="nombre"/>
+                    <field name="telefono"/>
+                    <field name="descripcion"/>
+                </search>  
+            </field>
+        </record>
+        
+        <!-- Proveedor -->
+        <!-- Actions Proveedor -->
+        <record model="ir.actions.act_window" id="action_window_proveedores_tree"> 
+            <field name="name">Proveedores</field>
+            <field name="res_model">flyshoesreserva.proveedor</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_window_proveedores_form"> 
+            <field name="name">Introducir proveedor</field>
+            <field name="res_model">flyshoesreserva.proveedor</field>
+            <field name="view_mode">form</field>
+        </record>
+        <!-- Titulo FlyShoes -->
+        <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
+        <!-- Subtitulo Proveedor -->
+        <menuitem id="proveedor_menu" name="Proveedores" parent="flyshoesreserva.menu_root"/>
+        <!-- Categorias Proveedor -->
+        <menuitem id="proveedor_menu_form" name="Introducir proveedor" parent="proveedor_menu" action="action_window_proveedores_form"/>
+        <menuitem id="proveedor_menu_tree" name="Lista de proveedores" parent="proveedor_menu" action="action_window_proveedores_tree"/>
+    </data>
+</odoo>

@@ -17,6 +17,7 @@
             </field>
         </record>
         
+        <!-- VISTA DE FORMULARIO-->
         <record model="ir.ui.view" id="usuario_form_view">
             <field name="name">Crear usuario</field>
             <field name="priority" eval="1"/>
@@ -45,12 +46,11 @@
                 </form>
             </field>
         </record>
-         
-         
+        
         <!-- VISTA DE BÚSQUEDA-->
         <record model="ir.ui.view" id="usuario_search_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">Busqueda de usuario</field>
+            <field name="name">Búsqueda de usuario</field>
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
             <!--descripcion del diseño de la vista (arquitectura) -->
@@ -61,6 +61,33 @@
                 </search>
             </field>
         </record>
+        
+        <!-- Usuario -->
+        <!-- Actions Usuario -->
+        <record model="ir.actions.act_window" id="action_window_usuarios">
+            <field name="name">Ventana de usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_window_usuarios_tree"> 
+            <field name="name">Usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_window_usuarios_form"> 
+            <field name="name">Introducir usuario</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">form</field>
+        </record>
+        <!-- Titulo FlyShoes -->
+        <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
+        <!-- Subtitulo Usuario -->
+        <menuitem id="usuario_menu" name="Usuarios" parent="flyshoesreserva.menu_root"/>
+        <!-- Categorias Usuario -->
+        <menuitem id="usuario_menu_form" name="Introducir usuario" parent="usuario_menu" action="action_window_usuarios_form"/>
+        <menuitem id="usuario_menu_tree" name="Lista de usuarios" parent="usuario_menu" action="action_window_usuarios_tree"/>
          
     </data>
 </odoo>
