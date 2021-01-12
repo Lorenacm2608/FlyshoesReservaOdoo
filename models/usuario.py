@@ -17,7 +17,7 @@ class Usuario(models.Model):
                                     default='cliente')
     estado_usuario = fields.Selection(selection=[('enabled', 'ENABLED'),
                                       ('disabled', 'DISABLED')],
-                                      string="Tipo de usuario",
+                                      string="Estado de usuario",
                                       help="Por favor seleciona ENABLED/DISABLED.",
                                       default='enabled')
     #relacion de cliente->reserva

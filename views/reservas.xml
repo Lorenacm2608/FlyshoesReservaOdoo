@@ -1,57 +1,49 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-    
-    <record model="ir.ui.view" id="flyshoesreserva.list_reservas">
-      <field name="name">Reservas</field>
-      <field name="model">flyshoesreserva.reserva</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="descripcion"/>
-          <field name="cantidad"/>
-          <field name="estado_reserva"/>
-        </tree>
-      </field>
-    </record>
-    
-
-    <!-- actions opening views on models -->
-    
-    <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
-      <field name="name">Ventana de reservas</field>
-      <field name="res_model">flyshoesreserva.reserva</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="flyshoesreserva.list_reservas">
+            <field name="name">Reservas</field>
+            <field name="model">flyshoesreserva.reserva</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                    <field name="cantidad"/>
+                    <field name="estado_reserva"/>
+                </tree>
+            </field>
+        </record>
     
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="flyshoesreserva.action_server">
-      <field name="name">flyshoesreserva server</field>
-      <field name="model_id" ref="model_flyshoesreserva_flyshoesreserva"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
+            <field name="name">Ventana de reservas</field>
+            <field name="res_model">flyshoesreserva.reserva</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <!-- Reservas -->
+        <!-- Actions Reserva -->
+        <record model="ir.actions.act_window" id="action_window_reservas_tree"> 
+            <field name="name">Reservas</field>
+            <field name="res_model">flyshoesreserva.reserva</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_window_reservas_form"> 
+            <field name="name">Introducir reserva</field>
+            <field name="res_model">flyshoesreserva.reserva</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <!-- Titulo FlyShoes -->
+        <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
+        <!-- Subtitulo Reserva -->
+        <menuitem id="reservas_menu" name="Reservas" parent="flyshoesreserva.menu_root"/>
+        <!--Categorias Reserva-->  
+        <menuitem id="reservas_menu_form" name="Introducir reserva" parent="reservas_menu" action="action_window_reservas_form"/>   
+        <menuitem id="reservas_menu_tree" name="Lista de reservas" parent="reservas_menu" action="action_window_reservas_tree"/>
 
-    <!-- Top menu item -->
-    
-    <menuitem name="Flyshoes Reserva" id="flyshoesreserva.menu_root"/>
-    
-    <!-- menu categories -->
-    
-    <menuitem name="Reservas" id="flyshoesreserva.reservas" parent="flyshoesreserva.menu_root"/>
-    
-    <!-- actions -->
-    
-    <menuitem name="Mis reservas" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.reservas"
-              action="flyshoesreserva.action_window"/> 
-    
-  </data>
+        
+    </data>
 </odoo>
