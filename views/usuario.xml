@@ -19,16 +19,16 @@
         
         
         <!-- VISTA DE FORMULARIO--> 
-        <record model="ir.ui.view" id="usuario_form_view">
+        <record model="ir.ui.view" view_id="usuario_form_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
             <field name="name">usuario.form</field> 
-            <field name="priority" eval="1" /> 
+            <field name="priority">15</field>
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
             <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml">
                 <form>
-                    <sheets>
+                    <sheet>
                         <group colspan="2">
                             <separator colspan="2"/>
                             <field name="name"/>
@@ -42,7 +42,7 @@
                             <field name="tipo_usuario" string="Hola"/>
                             <field name="estado_usuario"/>
                         </group>
-                    </sheets>
+                    </sheet>
                 </form>     
             </field>
         </record> 
