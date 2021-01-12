@@ -4,7 +4,7 @@
         <!-- VISTA DE ÁRBOL-->
         <record model="ir.ui.view" id="usuario_tree_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">usuario.tree</field>
+            <field name="name">Lista de usuarios</field>
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_tree"/>
@@ -17,41 +17,40 @@
             </field>
         </record>
         
-        
-        <!-- VISTA DE FORMULARIO--> 
-        <record model="ir.ui.view" view_id="usuario_form_view">
-            <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">usuario.form</field> 
-            <field name="priority">15</field>
-            <!--modelo al que hace referencia-->
+        <record model="ir.ui.view" id="usuario_form_view">
+            <field name="name">Crear usuario</field>
+            <field name="priority" eval="1"/>
             <field name="model">res.users</field>
-            <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <group colspan="2">
+                        <group string="Datos personales">
                             <separator colspan="2"/>
+                            <field name="login"/>
                             <field name="name"/>
                             <field name="email"/>
                             <field name="mobile"/>
-                            <field name="login"/>
-                            <field name="company_name"/>
-                            <field name="company_type"/>
                         </group>
-                        <group colspan="4">
-                            <field name="tipo_usuario" string="Hola"/>
+                        <group string="Datos de la compañia">
+                            <separator colspan="2"/>
+                            <field name="company_name"/>
+                            <field name="company_type"/>  
+                        </group>
+                        <group string="Usuario">
+                            <separator colspan="2"/>
+                            <field name="tipo_usuario"/>
                             <field name="estado_usuario"/>
                         </group>
                     </sheet>
-                </form>     
+                </form>
             </field>
-        </record> 
+        </record>
          
          
         <!-- VISTA DE BÚSQUEDA-->
         <record model="ir.ui.view" id="usuario_search_view">
             <!-- descripcion de la vista cuando se busca en una lista-->
-            <field name="name">usuario.search</field>
+            <field name="name">Busqueda de usuario</field>
             <!--modelo al que hace referencia-->
             <field name="model">res.users</field>
             <!--descripcion del diseño de la vista (arquitectura) -->
