@@ -16,6 +16,7 @@
                     <field name="imagen"/>
                     <field name="stock"/>
                     <field name="talla"/>
+                    <field name="proveedor"/>
                 </tree>  
             </field>
          </record>
@@ -29,8 +30,8 @@
          <field name="arch" type="xml">
                 <form string="formulario">
                      <sheets>
-                           <group colspan="7">
-                               <separator string="Datos del producto" colspan="7"/>
+                           <group colspan="2">
+                               <separator string="Datos del producto" colspan="2"/>
                                <field name="modelo"/>
                                <field name="descripcion"/>
                                <field name="tipo"/>
@@ -38,6 +39,7 @@
                                <field name="imagen"/>
                                <field name="stock"/>
                                <field name="talla"/>
+                               <field name="proveedor"/>
                            </group>
                      </sheets>
                 </form>     
@@ -77,7 +79,7 @@
     
         <!-- actions -->
     
-        <menuitem name="Mis Productos" id="flyshoesreserva.reservas_list" parent="flyshoesreserva.productos"
+        <menuitem name="Mis Productos" id="flyshoesreserva.producto_list" parent="flyshoesreserva.productos"
                 action="flyshoesreserva.action_window"/> 
     </data>
 </odoo>
