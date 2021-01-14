@@ -1,25 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="flyshoesreserva.list_reservas">
+        <!--  Lista de reservas -->
+        <record model="ir.ui.view" id="flyshoesreserva.reserva_list_reservas">
             <field name="name">Reservas</field>
             <field name="model">flyshoesreserva.reserva</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="cliente"/>
                     <field name="descripcion"/>
                     <field name="cantidad"/>
+                    <field name="create_date" string="Fecha realizada"/>
+                    <field name="date_entrega"/>
                     <field name="estado_reserva"/>
+                    
                 </tree>
             </field>
         </record>
     
-
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="flyshoesreserva.action_window">
-            <field name="name">Ventana de reservas</field>
-            <field name="res_model">flyshoesreserva.reserva</field>
-            <field name="view_mode">tree,form</field>
+        
+        <!-- VISTA DE FORMULARIO-->
+        <record model="ir.ui.view" id="flyshoesreserva.reserva_form_view">
+            <field name="name">Crear una reserva</field>
+            <field name="model">flyshoesreserva.reserva</field>
+            <field name="arch" type="xml"> 
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <group string="Nueva reserva">
+                                <separator colspan="2"/>
+                                <field name="name" />
+                                <field name="descripcion"/>
+                                <field name="estado_reserva"/>
+                                
+                                <separator colspan="2"/>
+                                <field name="create_date" string="Fecha de reserva"/>
+                                <field name="date_entrega"/>
+            
+                            </group>
+                  
+                            <group string="Producto">
+                                <separator colspan="2"/>
+                                <field name="producto"/>
+                                <field name="cantidad"/>
+                            </group>           
+                           
+                            <group string="Cliente"> 
+                                <separator colspan="2"/>
+                                <field name="cliente"/>
+                         
+                            </group> 
+                        </group>     
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- VISTA DE BÚSQUEDA-->
+        <record model="ir.ui.view" id="flyshoesreserva.search_reservas">
+            <!-- descripcion de la vista cuando se busca en una lista-->
+            <field name="name">Búsqueda de reserva</field>
+            <!--modelo al que hace referencia-->
+            <field name="model">flyshoesreserva.reserva</field>
+            <!--descripcion del diseño de la vista (arquitectura) -->
+            <field name="arch" type="xml"> 
+                <search>
+                    <field name="name"/>
+                    <field name="cliente"/>
+                    <field name="date_entrega"/>
+                    <field name="producto"/>      
+                </search>  
+            </field>
         </record>
     
         <!-- Reservas -->

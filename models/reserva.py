@@ -8,11 +8,11 @@ from odoo import models
 
 class Reserva(models.Model):
     _name = 'flyshoesreserva.reserva'
-    name = fields.Char(String="Reserva")
-    descripcion = fields.Text()
+    name = fields.Char(string="Reserva")
+    descripcion = fields.Text(required=True)
     cantidad = fields.Integer(required=True, string="Cantidad del producto")
-    
-    #faltan muchos campos
+    #fecha de entrega
+    date_entrega = fields.Date(required=True, string="Fecha de entrega")
     estado_reserva = fields.Selection(selection=[('cancelada', 'CANCELADA'),
                                       ('confirmada', 'CONFIRMADA'),
                                       ('finalizada', 'FINALIZADA')],
