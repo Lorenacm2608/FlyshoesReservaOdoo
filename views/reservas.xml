@@ -73,28 +73,19 @@
             </field>
         </record>
     
-        <!-- Reservas -->
+       <!-- Reservas -->
         <!-- Actions Reserva -->
-        <record model="ir.actions.act_window" id="action_window_reservas_tree"> 
-            <field name="name">Reservas</field>
+         <record model="ir.actions.act_window" id="action_window_reservas_tree_form">
+            <field name="name">Ventana de reservas</field>
             <field name="res_model">flyshoesreserva.reserva</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,form</field>
         </record>
-        
-        <record model="ir.actions.act_window" id="action_window_reservas_form"> 
-            <field name="name">Introducir reserva</field>
-            <field name="res_model">flyshoesreserva.reserva</field>
-            <field name="view_mode">form</field>
-        </record>
-        
         <!-- Titulo FlyShoes -->
         <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
         <!-- Subtitulo Reserva -->
         <menuitem id="reservas_menu" name="Reservas" parent="flyshoesreserva.menu_root"/>
         <!--Categorias Reserva-->  
-        <menuitem id="reservas_menu_form" name="Introducir reserva" parent="reservas_menu" action="action_window_reservas_form"/>   
-        <menuitem id="reservas_menu_tree" name="Lista de reservas" parent="reservas_menu" action="action_window_reservas_tree"/>
-
+        <menuitem id="reservas_menu_form" name="Gestión reserva" parent="reservas_menu" action="action_window_reservas_tree_form"/>
         
     </data>
 </odoo>

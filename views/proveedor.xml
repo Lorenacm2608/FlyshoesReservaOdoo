@@ -68,23 +68,17 @@
         
         <!-- Proveedor -->
         <!-- Actions Proveedor -->
-        <record model="ir.actions.act_window" id="action_window_proveedores_tree"> 
-            <field name="name">Proveedores</field>
+        <record model="ir.actions.act_window" id="action_window_proveedores_tree_form"> 
+            <field name="name">Ventana de proveedores</field>
             <field name="res_model">flyshoesreserva.proveedor</field>
-            <field name="view_mode">tree</field>
-        </record>
-        
-        <record model="ir.actions.act_window" id="action_window_proveedores_form"> 
-            <field name="name">Introducir proveedor</field>
-            <field name="res_model">flyshoesreserva.proveedor</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
         <!-- Titulo FlyShoes -->
         <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
         <!-- Subtitulo Proveedor -->
         <menuitem id="proveedor_menu" name="Proveedores" parent="flyshoesreserva.menu_root"/>
         <!-- Categorias Proveedor -->
-        <menuitem id="proveedor_menu_form" name="Introducir proveedor" parent="proveedor_menu" action="action_window_proveedores_form"/>
-        <menuitem id="proveedor_menu_tree" name="Lista de proveedores" parent="proveedor_menu" action="action_window_proveedores_tree"/>
+        <menuitem id="proveedor_menu_form" name="Gestión proveedor" parent="proveedor_menu" action="action_window_proveedores_tree_form"/>
+       
     </data>
 </odoo>
