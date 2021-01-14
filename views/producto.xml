@@ -63,24 +63,17 @@
         
         <!-- Producto -->
         <!-- Actions Producto -->
-        <record model="ir.actions.act_window" id="action_window_productos_form"> 
-            <field name="name">Introducir producto</field>
+        <record model="ir.actions.act_window" id="action_window_productos_tree_form"> 
+            <field name="name">Ventana de productos</field>
             <field name="res_model">flyshoesreserva.producto</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
         
-        <record model="ir.actions.act_window" id="action_window_productos_tree"> 
-            <field name="name">Productos</field>
-            <field name="res_model">flyshoesreserva.producto</field>
-            <field name="view_mode">tree</field>
-        </record>
-
         <!-- Titulo FlyShoes -->
         <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
         <!-- Subtitulo Producto -->
         <menuitem id="producto_menu" name="Productos"  parent="flyshoesreserva.menu_root"/>
         <!-- Categorias Producto -->
-        <menuitem id="producto_menu_form" name="Introducir producto" parent="producto_menu" action="action_window_productos_form" />
-        <menuitem id="producto_menu_tree" name="Lista de productos" parent="producto_menu" action="action_window_productos_tree"/> 
+        <menuitem id="producto_menu_form" name="Gestión producto" parent="producto_menu" action="action_window_productos_tree_form" />
     </data>
 </odoo>

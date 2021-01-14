@@ -64,30 +64,17 @@
         
         <!-- Usuario -->
         <!-- Actions Usuario -->
-        <record model="ir.actions.act_window" id="action_window_usuarios">
+        <record model="ir.actions.act_window" id="action_window_usuarios_tree_form">
             <field name="name">Ventana de usuarios</field>
             <field name="res_model">res.users</field>
             <field name="view_mode">tree,form</field>
-        </record>
-        
-        <record model="ir.actions.act_window" id="action_window_usuarios_tree"> 
-            <field name="name">Usuarios</field>
-            <field name="res_model">res.users</field>
-            <field name="view_mode">tree</field>
-        </record>
-        
-        <record model="ir.actions.act_window" id="action_window_usuarios_form"> 
-            <field name="name">Introducir usuario</field>
-            <field name="res_model">res.users</field>
-            <field name="view_mode">form</field>
         </record>
         <!-- Titulo FlyShoes -->
         <menuitem name="Flyshoes Reservas" id="flyshoesreserva.menu_root"/>
         <!-- Subtitulo Usuario -->
         <menuitem id="usuario_menu" name="Usuarios" parent="flyshoesreserva.menu_root"/>
         <!-- Categorias Usuario -->
-        <menuitem id="usuario_menu_form" name="Introducir usuario" parent="usuario_menu" action="action_window_usuarios_form"/>
-        <menuitem id="usuario_menu_tree" name="Lista de usuarios" parent="usuario_menu" action="action_window_usuarios_tree"/>
+        <menuitem id="usuario_menu_tree" name="Gestión usuarios" parent="usuario_menu" action="action_window_usuarios_tree_form"/>
          
     </data>
 </odoo>
