@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import fields
+from odoo import models
 
 class Producto(models.Model):
     _name = 'flyshoesreserva.producto'
@@ -35,4 +36,3 @@ class Producto(models.Model):
   
     #relacion de producto->proveedor
     proveedor = fields.Many2one('flyshoesreserva.proveedor', String="Proveedor", required=True)
-    
