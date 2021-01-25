@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','report'],
 
     # always loaded
     'data': [
@@ -30,6 +30,9 @@
         'views/reservas.xml',
         'views/producto.xml',
         'views/usuario.xml',
+        'reports/report.xml',
+        'security/security.xml'
+        
         #'views/reserva_menus.xml',
         #'views/templates.xml',
         

@@ -37,10 +37,9 @@ class Reserva(models.Model):
                               ondelete='cascade', string="Cliente", required=True)
     # relacion reserva->producto
     producto = fields.Many2one('flyshoesreserva.producto',
-                               ondelete='cascade', string="Producto", required=True, default=lambda self: self.env.modelo)
+                               ondelete='cascade', string="Producto", required=True)
                                
-    #https://github.com/Odoo-10-test/trucos_odoo/blob/master/modelos.md    
-    #https://www.flashodoo.com/blog/flashodoo-1/post/trucos-de-odoo-78
+    
     
     # Control de la cantidad del producto
     @api.onchange('cantidad')

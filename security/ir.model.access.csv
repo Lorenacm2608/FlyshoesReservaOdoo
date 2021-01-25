@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_flyshoesreserva_flyshoesreserva,flyshoesreserva.flyshoesreserva,model_flyshoesreserva_flyshoesreserva,,1,0,0,0
+access_vendedores,access Vendedores,flyshoesreserva_producto,group_vendedores,1,1,1,1
+access_clientes,access Clientes,flyshoesreserva_reserva,group_clientes,1,1,1,1
+access_administradores,access Administradores,flyshoesreserva,group_administradores,1,1,1,1
