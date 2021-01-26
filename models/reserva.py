@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-# Fredy
+# Fredy Vargas Flores
 
 from datetime import datetime
 from odoo import api
@@ -17,12 +17,7 @@ class Reserva(models.Model):
     name = fields.Char(required=True, string="Reserva")
     descripcion = fields.Text(required=True)
     cantidad = fields.Integer(required=True, default=1, string="Cantidad del producto")
-    # nombre_producto = fields.Char(related='flyshoes.producto.modelo')
-    # fecha de entrega
-    # CANCELADA RETORNA LA CANTIDAD RESERVADA AL STOCK DE PRODUCTO (fecha null)
-    # REALIZADA NADA
-    # EXPIRADA RETORNA CANTIDAD RESERVADA
-    # CONFIRMADA RESTA LA 
+    
     date_entrega = fields.Date(required=True, string="Fecha de entrega")
     estado_reserva = fields.Selection(selection=[('cancelada', 'CANCELADA'),
                                       ('confirmada', 'CONFIRMADA'),
@@ -37,10 +32,9 @@ class Reserva(models.Model):
                               ondelete='cascade', string="Cliente", required=True)
     # relacion reserva->producto
     producto = fields.Many2one('flyshoesreserva.producto',
-                               ondelete='cascade', string="Producto", required=True, default=lambda self: self.env.modelo)
+                               ondelete='cascade', string="Producto", required=True)
                                
-    #https://github.com/Odoo-10-test/trucos_odoo/blob/master/modelos.md    
-    #https://www.flashodoo.com/blog/flashodoo-1/post/trucos-de-odoo-78
+    
     
     # Control de la cantidad del producto
     @api.onchange('cantidad')
