@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import fields
+from odoo import models
 
 class Producto(models.Model):
     _name = 'flyshoesreserva.producto'

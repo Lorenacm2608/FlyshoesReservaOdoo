@@ -41,7 +41,11 @@
                             <separator colspan="2"/>
                             <field name="empresa"/>
                             <field name="tipo"/>
-                        </group>      
+                        </group>    
+                        <group string="Administrador"> 
+                            <separator colspan="2"/>
+                            <field name="p_administrador"/>
+                        </group>  
                     </sheet>
                 </form>
             </field>
