@@ -9,7 +9,7 @@ from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
 
-# Fredy
+# Fredy Vargas Flores
 
 class Reserva(models.Model):
     _name = 'flyshoesreserva.reserva'
