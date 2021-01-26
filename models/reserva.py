@@ -2,7 +2,6 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-# Fredy
 
 from datetime import datetime
 from odoo import api
@@ -10,19 +9,14 @@ from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
 
-
+# Fredy
 
 class Reserva(models.Model):
     _name = 'flyshoesreserva.reserva'
     name = fields.Char(required=True, string="Reserva")
     descripcion = fields.Text(required=True)
     cantidad = fields.Integer(required=True, default=1, string="Cantidad del producto")
-    # nombre_producto = fields.Char(related='flyshoes.producto.modelo')
-    # fecha de entrega
-    # CANCELADA RETORNA LA CANTIDAD RESERVADA AL STOCK DE PRODUCTO (fecha null)
-    # REALIZADA NADA
-    # EXPIRADA RETORNA CANTIDAD RESERVADA
-    # CONFIRMADA RESTA LA 
+    
     date_entrega = fields.Date(required=True, string="Fecha de entrega")
     estado_reserva = fields.Selection(selection=[('cancelada', 'CANCELADA'),
                                       ('confirmada', 'CONFIRMADA'),
@@ -81,17 +75,18 @@ class Reserva(models.Model):
     # Actualizar producto stock (Producto)
     @api.constrains('estado_reserva')
     def _update_stock_producto(self):
+        producto_cantidad = self.cantidad
         if self.estado_reserva == "CONFIRMADA":
             producto_stock = self.producto.stock
             if self.cantidad < producto_stock:
-                self.producto.stock = producto_stock - self.cantidad
+                self.producto.stock = producto_stock - producto_cantidad
             else:
                 return{'warning':{'title':"Cantidad 'cantidad' error.",
                     'message':"No hay stock del producto seleccionado",
                     },
             }
         elif self.estado_reserva == "CANCELADA":
-            self.producto.stock = producto_stock + self.cantidad
+            self.producto.stock = producto_stock + producto_cantidad
                 
             
                 
