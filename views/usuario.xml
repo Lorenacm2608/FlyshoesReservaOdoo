@@ -31,6 +31,7 @@
                             <field name="name"/>
                             <field name="email"/>
                             <field name="mobile"/>
+                            <field name="codigoPostal"/>
                         </group>
                         <group string="Datos de la compañia">
                             <separator colspan="2"/>
