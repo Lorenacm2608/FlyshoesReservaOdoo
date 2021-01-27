@@ -1,4 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_vendedores,access Vendedores,flyshoesreserva_producto,group_vendedores,1,1,1,1
-access_clientes,access Clientes,flyshoesreserva_reserva,group_clientes,1,1,1,1
-access_administradores,access Administradores,flyshoesreserva,group_administradores,1,1,1,1
+access_vendedores,access Vendedores,model_flyshoesreserva_producto,group_vendedores,1,1,1,1
+access_clientes,access Clientes,model_flyshoesreserva_reserva,group_clientes,1,1,1,1
+access_administradores_usuarios,access Administradores Usuarios,model_res_users,group_administradores,1,1,1,1
+access_administradores_reservas,access Administradores Reservas,model_flyshoesreserva_reserva,group_administradores,1,1,1,1
+access_administradores_productos,access Administradores Productos,model_flyshoesreserva_producto,group_administradores,1,1,1,1
+access_administradores_proveedores,access Administradores Proveedores,model_flyshoesreserva_proveedor,group_administradores,1,1,1,1

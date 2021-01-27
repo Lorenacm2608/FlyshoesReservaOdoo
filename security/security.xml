@@ -2,13 +2,13 @@
 <odoo>
     <data>
         <record id="group_vendedores" model="res.groups">
-            <field name="name">FlyShoes Vendedores</field>
+            <field name="name">FlyShoes / Vendedores</field>
         </record>
         <record id="group_clientes" model="res.groups">
-            <field name="name">FlyShoes Cliente</field>
+            <field name="name">FlyShoes / Cliente</field>
         </record>
         <record id="group_administradores" model="res.groups">
-            <field name="name">FlyShoes Administradores</field>
+            <field name="name">FlyShoes / Administradores</field>
         </record>
     </data>
 </odoo>
