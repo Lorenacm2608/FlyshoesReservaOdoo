@@ -4,16 +4,17 @@
 
 #Moroni
 
+from odoo import api
 from odoo import fields
 from odoo import models
-from odoo import api
+from odoo.exceptions import ValidationError
 class Proveedor(models.Model):
     _name = 'flyshoesreserva.proveedor'
     
     tipo = fields.Selection(selection=[
-                             ('zapatillas', 'ZAPATILLAS'),
-                             ('ropa', 'ROPA')
-                             ])
+                            ('zapatillas', 'ZAPATILLAS'),
+                            ('ropa', 'ROPA')
+                            ])
     empresa = fields.Char(required=True)
     email = fields.Char(required=True)
     nombre = fields.Char(required=True)
@@ -21,11 +22,30 @@ class Proveedor(models.Model):
     descripcion = fields.Char()
     
     #Relacion de proveedor->usuario(Administrador)
-    p_administrador = fields.Many2one('res.users', string="Administrador", required=True)
+    administrador = fields.Many2one('res.users', string="Administrador", required=True)
     
     #Relacion de proveedor-> producto
     producto = fields.One2many('flyshoesreserva.producto', 'proveedor', string="Productos", required=True)
 
+# Control del campo empresa (Proveedor)
+    @api.constrains('empresa')
+    def _verify_size_empresa(self):        
+        if len(self.empresa) < 5:
+            raise ValidationError("Campo empresa muy corta")
+        
+        # Control del campo email (Proveedor)
+    @api.constrains('email')
+    def _verify_size_email(self):        
+        if len(self.email) < 5:
+            raise ValidationError("Campo email muy corta")
+        
+        
+# Control del campo name (Proveedor)
+    @api.constrains('nombre')
+    def _verify_size_nombre(self):        
+        if len(self.nombre) < 5:
+            raise ValidationError("Campo proveedor muy corta")
+        
 # Control del telefono del proveedor
     @api.onchange('telefono')
     def _verify_valid_telefono(self):
@@ -35,3 +55,9 @@ class Proveedor(models.Model):
                 'message': "El telefono introducido es incorrecto",
                 },
         }
+        
+# Control de la longitud del campo descripcion   
+    @api.constrains('descripcion')
+    def _verify_size_descripcion(self):        
+        if len(self.descripcion) < 10:
+            raise ValidationError("Campo descripcion muy corta")

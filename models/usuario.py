@@ -1,14 +1,16 @@
 # To change this license header, choose License Headers in Project Properties.
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
+from odoo import api
 from odoo import fields
 from odoo import models
-
+from odoo.exceptions import ValidationError
 
 class Usuario(models.Model):
     _name = 'res.users'
     _inherit = 'res.users'
     
+    codigoPostal = fields.Char(required=True, string="Codigo postal de la localidad")
     tipo_usuario = fields.Selection(selection=[('cliente', 'CLIENTE'),
                                     ('vendedor', 'VENDEDOR'),
                                     ('administrador', 'ADMINISTRADOR')],
@@ -34,9 +36,17 @@ class Usuario(models.Model):
                                ondelete='cascade', string="Cliente", required=True)
     
     #relacion de administrador->proveedor
-    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'p_administrador', string="Proveedores")
+    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'administrador', string="Proveedores")
     
     #relacion de vendedor->producto
     productos_vendedor = fields.Many2many('flyshoesreserva.producto', String="Productos")
-    
-    
+            
+    @api.constrains('codigoPostal')
+    def _verify_sizeMax_codigoPostal(self):        
+        if len(self.codigoPostal) > 5:
+            raise ValidationError("Campo descripcion muy largo")
+
+    @api.constrains('codigoPostal')
+    def _verify_sizeMin_codigoPostal(self):        
+        if len(self.codigoPostal) < 5:
+            raise ValidationError("Campo descripcion muy corto")
