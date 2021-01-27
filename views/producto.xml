@@ -1,3 +1,5 @@
+<!-- Hecho por Nadir-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
@@ -6,7 +8,7 @@
             <field name="name">producto.tree</field>
             <!--modelo al que hace referencia-->
             <field name="model">flyshoesreserva.producto</field>
-            <!--descripcion del diseÃ±o de la vista (arquitectura) -->
+            <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml"> 
                 <tree>
                     <field name="modelo"/>
@@ -26,7 +28,7 @@
             <field name="name">producto.form</field>
             <!--modelo al que hace referencia-->
             <field name="model">flyshoesreserva.producto</field>
-            <!--descripcion del diseÃ±o de la vista (arquitectura) -->
+            <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml">
                 <form string="formulario">
                     <sheets>
@@ -51,7 +53,7 @@
             <field name="name">producto.search</field>
             <!--modelo al que hace referencia-->
             <field name="model">flyshoesreserva.producto</field>
-            <!--descripcion del diseÃ±o de la vista (arquitectura) -->
+            <!--descripcion del diseño de la vista (arquitectura) -->
             <field name="arch" type="xml"> 
                 <search>
                     <field name="modelo"/>
@@ -74,6 +76,16 @@
         <!-- Subtitulo Producto -->
         <menuitem id="producto_menu" name="Productos"  parent="flyshoesreserva.menu_root"/>
         <!-- Categorias Producto -->
-        <menuitem id="producto_menu_form" name="GestiÃ³n producto" parent="producto_menu" action="action_window_productos_tree_form" />
+        <menuitem id="producto_menu_form" name="Gestión producto" parent="producto_menu" action="action_window_productos_tree_form" />
     </data>
 </odoo>
+
+
+
+
+
+
+
+
+
+
