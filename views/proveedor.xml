@@ -44,7 +44,7 @@
                         </group>    
                         <group string="Administrador"> 
                             <separator colspan="2"/>
-                            <field name="p_administrador"/>
+                            <field name="administrador"/>
                         </group>  
                     </sheet>
                 </form>

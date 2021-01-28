@@ -1,3 +1,7 @@
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -33,7 +37,7 @@ class Usuario(models.Model):
                                ondelete='cascade', string="Cliente", required=True)
     
     #relacion de administrador->proveedor
-    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'p_administrador', string="Proveedores")
+    proveedores_administrador = fields.One2many('flyshoesreserva.proveedor', 'administrador', string="Proveedores")
     
     #relacion de vendedor->producto
     productos_vendedor = fields.Many2many('flyshoesreserva.producto', String="Productos")
