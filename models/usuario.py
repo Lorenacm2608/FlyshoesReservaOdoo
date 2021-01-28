@@ -2,7 +2,7 @@ from odoo import api
 from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
-
+#Author: Lorena
 class Usuario(models.Model):
     _name = 'res.users'
     _inherit = 'res.users'
