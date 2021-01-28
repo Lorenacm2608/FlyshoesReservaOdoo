@@ -77,3 +77,13 @@
         <menuitem id="producto_menu_form" name="Gestión producto" parent="producto_menu" action="action_window_productos_tree_form" />
     </data>
 </odoo>
+
+
+
+
+
+
+
+
+
+

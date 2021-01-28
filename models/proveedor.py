@@ -8,6 +8,8 @@ from odoo import api
 from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
+
+#Author: Moroni
 class Proveedor(models.Model):
     _name = 'flyshoesreserva.proveedor'
     

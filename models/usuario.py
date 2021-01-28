@@ -1,11 +1,12 @@
 # To change this license header, choose License Headers in Project Properties.
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
+
 from odoo import api
 from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
-
+#Author: Lorena
 class Usuario(models.Model):
     _name = 'res.users'
     _inherit = 'res.users'
