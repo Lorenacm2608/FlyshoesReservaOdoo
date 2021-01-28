@@ -1,11 +1,6 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
-
-#Lorena
-
 from odoo import fields
 from odoo import models
+#Author: Moroni
 class Proveedor(models.Model):
     _name = 'flyshoesreserva.proveedor'
     

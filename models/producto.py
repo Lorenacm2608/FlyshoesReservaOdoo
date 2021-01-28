@@ -1,10 +1,8 @@
-# Hecho por Nadir
-
 from odoo import api
 from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
-
+#Author: Nadir
 class Producto(models.Model):
     _name = 'flyshoesreserva.producto'
     
